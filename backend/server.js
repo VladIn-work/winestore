@@ -1,5 +1,6 @@
 import express from "express";
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import path from "path";
 import dotenv from "dotenv";
 
 import userRouter from "./routers/userRouter.js";
@@ -18,11 +19,10 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/winestore', {
     useCreateIndex: true,
 });
 
-
-
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
+
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('*', (req, res) =>
