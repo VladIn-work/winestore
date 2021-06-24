@@ -2,7 +2,7 @@
   "name": "winestore",
   "type": "module",
   "version": "1.0.0",
-  "description": "Wine App",
+  "description": "winestore",
   "main": "index.js",
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VladWork-Hard/Wine-App.git"
+    "url": "git+https://github.com/VladWork-Hard/winestore.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VladWork-Hard/Wine-App/issues"
+    "url": "https://github.com/VladWork-Hard/winestore/issues"
   },
-  "homepage": "https://github.com/VladWork-Hard/Wine-App#readme",
+  "homepage": "https://github.com/VladWork-Hard/winestore#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
