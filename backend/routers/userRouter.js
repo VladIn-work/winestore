@@ -39,6 +39,7 @@ userRouter.post('/signup', expressAsyncHandler(async (req, res) => {
 
 userRouter.post('/login', expressAsyncHandler(async (req, res) => {
    const user = await User.findOne({email: req.body.email});
+   //DB email compared with entered email
    if (user) {
       if(bcrypt.compareSync(req.body.password, user.password)) {
          //entered password to compare with DB pass
