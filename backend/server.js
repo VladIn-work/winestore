@@ -1,6 +1,6 @@
 
 import mongoose from "mongoose";
-import Express from "express";
+import express from "express";
 import path from "path";
 import dotenv from "dotenv";
 
@@ -10,9 +10,9 @@ import orderRouter from "./routers/orderRouter.js";
 
 dotenv.config();//to read the content of .evn file
 
-const app = Express();
-app.use(Express.json()); // add new middleware to parse json data from http request
-app.use(Express.urlencoded({ extended: true })); // middleware for parsing
+const app = express();
+app.use(express.json()); // add new middleware to parse json data from http request
+app.use(express.urlencoded({ extended: true })); // middleware for parsing
 
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/winestore', {
     useNewUrlParser: true, // deprecated warnings
@@ -25,7 +25,7 @@ app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
 
 const __dirname = path.resolve();
-app.use(Express.static(path.join(__dirname, '/frontend/build')));
+app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
 );
